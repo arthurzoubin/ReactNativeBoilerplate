@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux-immutable'
 
-import { homePageReducers as homePage } from './homePage.reducers'
-
+import { appNavigatorReducers as appNavigator } from './appNavigator.reducers'
+import { testPageReducers as testPage } from './testPage.reducers'
 export default combineReducers({
-  homePage,
+  appNavigator,
+  testPage,
 })

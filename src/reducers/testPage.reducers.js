@@ -1,5 +1,5 @@
 /*
- * HomePageReducer
+ * TestPage Reducer
  *
  * The reducer takes care of our data. Using actions, we can change our
  * application state.
@@ -16,7 +16,7 @@ import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
-} from '../constants/homePage'
+} from '../constants/testPage'
 
 // The initial state of the App
 const initialState = fromJS({
@@ -29,7 +29,7 @@ const initialState = fromJS({
   },
 })
 
-export const homePageReducers = (state = initialState, action) => {
+export const testPageReducers = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_USERNAME:
       // Delete prefixed '@' from the github username

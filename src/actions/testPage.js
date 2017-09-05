@@ -1,5 +1,5 @@
 /*
- * HomePage Actions
+ * TestPage Actions
  *
  * Actions change things in your application
  * Since this boilerplate uses a uni-directional data flow, specifically redux,
@@ -20,7 +20,7 @@
    LOAD_REPOS,
    LOAD_REPOS_SUCCESS,
    LOAD_REPOS_ERROR,
- } from '../constants/homePage'
+ } from '../constants/testPage'
 
  /**
   * Load the repositories, this action starts the request saga

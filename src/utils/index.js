@@ -1,2 +1,2 @@
-export { isEnv } from './predicates'
-export arrayConcat from './arrayConcat'
+export { isEnv, pixel } from './predicates'
+export { arrayConcat } from './arrayConcat'

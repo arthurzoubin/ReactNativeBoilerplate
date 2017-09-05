@@ -7,13 +7,13 @@ import rootSaga from './sagas'
 // If rootSaga is array, run each
 rootSaga.length > 0?rootSaga.map(sagaMiddleware.run):null
 
-import HomePage from './containers/HomePage'
+import AppNavigatorWapper from './containers/AppNavigator'
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <HomePage />
+        <AppNavigatorWapper />
       </Provider>
     )
   }

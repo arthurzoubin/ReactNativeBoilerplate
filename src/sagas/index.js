@@ -1,12 +1,12 @@
 import { arrayConcat } from '../utils'
-import { homePageSaga } from './homePage.saga'
+import { testPageSaga } from './testPage.saga'
 
 let sagas = []
 
 sagas = arrayConcat(
   [
     sagas,
-    homePageSaga,
+    testPageSaga,
   ]
 )
 

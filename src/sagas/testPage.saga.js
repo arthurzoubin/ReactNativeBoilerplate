@@ -3,11 +3,12 @@
  */
 
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects'
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from '../constants/homePage'
-import { reposLoaded, repoLoadingError } from '../actions/homePage'
+import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from '../constants/testPage'
+import { reposLoaded, repoLoadingError } from '../actions/testPage'
+import { toggleLoading } from '../actions/appNavigator'
 
 import { RequestClientClass as RequestClient } from '../utils/requestClient'
-import { makeSelectUsername } from '../selectors/homePage'
+import { makeSelectUsername } from '../selectors/testPage'
 
 const requestClient = () => new RequestClient('https://api.github.com/')
 
@@ -22,6 +23,7 @@ const getReposFunc = username => {
  */
 export function* getRepos() {
   // Select username from store
+  yield put(toggleLoading(true))
   const username = yield select(makeSelectUsername())
   try {
     // Call our request helper (see 'utils/request')
@@ -30,6 +32,7 @@ export function* getRepos() {
   } catch (err) {
     yield put(repoLoadingError(err))
   }
+  yield put(toggleLoading(false))
 }
 
 /**
@@ -40,13 +43,9 @@ export function* githubData() {
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
   const watcher = yield takeLatest(LOAD_REPOS, getRepos)
-
-  // Suspend execution until location changes
-  yield take([ LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR ])
-  yield cancel(watcher)
 }
 
 // Bootstrap sagas
-export const homePageSaga = [
+export const testPageSaga = [
   githubData,
 ]
