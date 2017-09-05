@@ -12,6 +12,7 @@
 		"prop-types": "^15.5.10",
 		"ramda": "^0.24.1",
 		"react": "16.0.0-alpha.6",
+		"react-immutable-proptypes": "^2.1.0",
 		"react-native": "0.44.0",
 		"react-native-spinkit": "^1.0.3",
 		"react-navigation": "^1.0.0-beta.11",
