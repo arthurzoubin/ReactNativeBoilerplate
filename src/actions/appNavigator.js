@@ -28,7 +28,7 @@ import {
 export const goTest = routeName => ({
   type: GO_TEST,
   payload: {
-    routeName
+    routeName,
   },
 })
 

@@ -1,6 +1,7 @@
 {
   "presets": ["react-native"],
   "plugins": [
+    "react-require",
     "transform-export-extensions",
     "transform-decorators-legacy",
     "transform-class-properties",

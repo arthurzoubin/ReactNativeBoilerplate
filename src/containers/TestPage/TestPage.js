@@ -9,19 +9,19 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Button,
   View,
   StyleSheet,
 } from 'react-native'
-import { AppNavigatorStyles } from '../AppNavigator/AppNavigatorConfig'
+import { AppNavigatorStyles, headerTitle, headerRight } from '../AppNavigator/AppNavigatorConfig'
 
 class TestPage extends Component {
-  static navigationOptions = ({ navigation, screenProps }) => ({
-    title: 'Test',
+  static navigationOptions = () => ({
+    headerTitle: headerTitle('Test'),
     headerStyle: AppNavigatorStyles.header,
+    headerRight: headerRight(''),
   })
   render() {
-    const { username, onChangeUsername, onPresSubmit, repos, loading } = this.props
+    const { username, onChangeUsername, onPresSubmit, repos } = this.props
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>
@@ -36,6 +36,7 @@ class TestPage extends Component {
               style={styles.input}
               placeholder="User Name"
               value={username}
+              underlineColorAndroid={'transparent'}
               onChangeText={onChangeUsername}
             />
           </View>
@@ -100,28 +101,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   label: {
-    lineHeight: 25,
     marginRight: 10,
+    alignSelf: 'center',
   },
   input: {
     width: 200,
-    height: 25,
+    height: 30,
     borderWidth: 1,
+    padding: 5,
     borderRadius: 2,
     borderColor: '#000000',
-    paddingLeft: 5,
   },
   button: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 5,
     marginTop: 15,
     backgroundColor: '#6391e7',
     borderWidth: 1,
     borderColor: '#6391e7',
     borderRadius: 2,
-    width: '100%',
   },
   buttonText: {
-    lineHeight: 30,
-    textAlign: 'center',
     color: '#FFFFFF',
   },
 })

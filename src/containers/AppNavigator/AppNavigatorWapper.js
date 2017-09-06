@@ -5,12 +5,12 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { addNavigationHelpers } from 'react-navigation';
+import { addNavigationHelpers } from 'react-navigation'
 import { AppNavigator } from './AppNavigator'
 import { selectAppNavigator, makeSelectLoading } from '../../selectors/appNavigator'
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 
-const AppNavigatorWapper = ({ dispatch, nav, loading}) => {
+const AppNavigatorWapper = ({ dispatch, nav, loading }) => {
   return (
     <View style={styles.container}>
       <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav.toJS() })} />
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
   },
 })
 
-const mapStateToProps = (state) => createStructuredSelector({
+const mapStateToProps = () => createStructuredSelector({
   nav: selectAppNavigator,
   loading: makeSelectLoading(),
-});
+})
 
 export default connect(mapStateToProps)(AppNavigatorWapper)

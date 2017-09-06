@@ -28,12 +28,12 @@ export const appNavigatorReducers = (state = initialState, action) => {
       return state.merge(AppNavigator.router.getStateForAction(
         NavigationActions.navigate({ routeName: action.payload.routeName }),
         state.toJS()
-      ));
+      ))
     case NavigationActions.BACK:
-    return state.merge(AppNavigator.router.getStateForAction(
-      NavigationActions.back({ routeName: FIRST_SCREEN }),
-      state.toJS()
-    ));
+      return state.merge(AppNavigator.router.getStateForAction(
+        NavigationActions.back({ routeName: FIRST_SCREEN }),
+        state.toJS()
+      ))
     default:
       return state
   }

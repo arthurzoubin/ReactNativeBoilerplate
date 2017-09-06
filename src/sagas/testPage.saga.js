@@ -2,8 +2,8 @@
  * Gets the repositories of the user from Github
  */
 
-import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects'
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from '../constants/testPage'
+import { call, put, select, takeLatest } from 'redux-saga/effects'
+import { LOAD_REPOS } from '../constants/testPage'
 import { reposLoaded, repoLoadingError } from '../actions/testPage'
 import { toggleLoading } from '../actions/appNavigator'
 
@@ -42,7 +42,7 @@ export function* githubData() {
   // Watches for LOAD_REPOS actions and calls getRepos when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
-  const watcher = yield takeLatest(LOAD_REPOS, getRepos)
+  yield takeLatest(LOAD_REPOS, getRepos)
 }
 
 // Bootstrap sagas

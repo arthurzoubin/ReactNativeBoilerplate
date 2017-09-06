@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native'
-import { AppNavigatorStyles } from '../AppNavigator/AppNavigatorConfig'
+import { AppNavigatorStyles, headerTitle } from '../AppNavigator/AppNavigatorConfig'
 import { goTest } from '../../actions/appNavigator'
 class Welcome extends Component {
   static navigationOptions = {
-    title: 'Welcome React Native',
+    headerTitle: headerTitle('Welcome React Native'),
     headerStyle: AppNavigatorStyles.header,
   }
 
@@ -41,7 +41,7 @@ const mapDispatchToProps = dispatch => ({
   goTest: (routeName) => dispatch(goTest(routeName)),
 })
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = () => ({})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Welcome)
 
@@ -63,16 +63,16 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   button: {
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#6391e7',
     borderWidth: 1,
     borderColor: '#6391e7',
     borderRadius: 2,
+    width: 120,
+    paddingVertical: 5,
   },
   buttonText: {
-    width: 120,
-    height: 30,
-    lineHeight: 30,
-    textAlign: 'center',
     color: '#FFFFFF',
   },
 })
