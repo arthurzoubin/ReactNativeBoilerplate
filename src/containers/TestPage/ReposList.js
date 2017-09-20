@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import {
   View,
@@ -16,7 +18,7 @@ const renderItem = ({ item }) => {
   )
 }
 
-const ReposList = ({ repos }) => (
+const ReposList = ({ repos }: Object) => (
   <View style={styles.container}>
     <Text style={styles.title}>Repositories</Text>
     <View style={styles.list}>

@@ -1,3 +1,5 @@
+// @flow
+
 /*
  * AppNavigator Reducer
  *
@@ -9,7 +11,7 @@
  * case YOUR_ACTION_CONSTANT:
  *   return state.set('yourStateVariable', true);
  */
-import { fromJS } from 'immutable'
+import { fromJS, Map } from 'immutable'
 import { NavigationActions } from 'react-navigation'
 import {
   GO_TEST,
@@ -20,7 +22,9 @@ import { AppNavigator } from '../containers/AppNavigator/AppNavigator'
 const initialState = fromJS(AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams(FIRST_SCREEN)))
   .set('loading', false)
 
-export const appNavigatorReducers = (state = initialState, action) => {
+type State = Map<string, any>
+
+export const appNavigatorReducers = (state: State = initialState, action: Object) => {
   switch(action.type) {
     case LOADING:
       return state.set('loading', action.payload.loading)

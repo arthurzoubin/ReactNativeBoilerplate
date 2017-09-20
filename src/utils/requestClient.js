@@ -1,3 +1,5 @@
+// @flow
+
 import request from 'superagent'
 import { merge } from 'ramda'
 import { constructUrlGetParameters } from './helpers'
@@ -11,12 +13,18 @@ const defaultOptions = {
 }
 
 export class RequestClientClass {
+  baseUrl: string
+  requestClient: Object
+  headers: Object
+  payload: Object
+  uri: string
+  queryUrl: any
 
-  constructor(baseUrl, requestClient = request) {
+  constructor(baseUrl: string, requestClient: Object = request) {
     this.baseUrl = baseUrl
     this.requestClient = requestClient
     this.headers = defaultOptions.headers
-    this.payload = ''
+    this.payload = {}
     this.uri = ''
     this.queryUrl = {}
   }
@@ -32,17 +40,17 @@ export class RequestClientClass {
     return string
   }
 
-  setUri(uri) {
+  setUri(uri: string) {
     this. uri = uri
     return this
   }
 
-  setHeaders(headers) {
+  setHeaders(headers: Object) {
     this.headers = merge(this.headers, headers)
     return this
   }
 
-  setPayload(payload) {
+  setPayload(payload: Object) {
     this.payload = payload
     return this
   }
@@ -52,7 +60,7 @@ export class RequestClientClass {
    * @param {Object} queryUrl
    * @returns {HttpClient}
    */
-  setQueryParameter(queryUrl) {
+  setQueryParameter(queryUrl: any) {
     if (typeof queryUrl === 'object') {
       Object.keys(queryUrl).forEach(key => {
         this.setQueryParameterUrl(key, queryUrl[key])
@@ -60,7 +68,7 @@ export class RequestClientClass {
     }
     return this
   }
-  setQueryParameterUrl(key, value) {
+  setQueryParameterUrl(key: string, value: string) {
     this.queryUrl[key] = value
     return this
   }
@@ -71,7 +79,7 @@ export class RequestClientClass {
     return constructUrlGetParameters(uri, this.queryUrl)
   }
 
-  doMethod(method = 'get') {
+  doMethod(method: string = 'get') {
     const endpoint = this.constructFQDN()
 
     const request = (() => {

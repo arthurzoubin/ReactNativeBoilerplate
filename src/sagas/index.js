@@ -1,7 +1,9 @@
+// @flow
+
 import { arrayConcat } from '../utils'
 import { testPageSaga } from './testPage.saga'
 
-let sagas = []
+let sagas: Object[] = []
 
 sagas = arrayConcat(
   [

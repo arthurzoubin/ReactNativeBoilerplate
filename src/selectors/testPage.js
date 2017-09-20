@@ -1,10 +1,15 @@
+// @flow
+
 /**
  * TestPage selectors
  */
 
+import { Map } from 'immutable'
 import { createSelector } from 'reselect'
 
-const selectTestPage = (state) => state.get('testPage')
+type State = Map<string, any>
+
+const selectTestPage = (state: State) => state.get('testPage')
 
 const makeSelectUsername = () => createSelector(
   selectTestPage,

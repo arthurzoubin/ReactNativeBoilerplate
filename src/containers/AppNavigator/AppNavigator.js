@@ -1,3 +1,5 @@
+// @flow
+
 import { StackNavigator } from 'react-navigation'
 // Import routers
 import Welcome from '../Welcome'

@@ -1,3 +1,5 @@
+// @flow
+
 import { fromJS } from 'immutable'
 import { makeCreateStore } from './makeCreateStore'
 import rootReducer from '../reducers'

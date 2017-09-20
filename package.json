@@ -5,8 +5,14 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"lint": "eslint src index.ios.js index.android.js --ext .js",
-		"test": "jest"
+		"test": "jest",
+		"flow": "flow; test $? -eq 1 -o $? -eq 2 && exit 1 || exit 0",
+		"flow:precommit": "flow; test $? -eq 1 -o $? -eq 2 && exit 1 || exit 0"
 	},
+	"precommit.silent": true,
+  "pre-commit": [
+    "flow:precommit"
+  ],
 	"dependencies": {
 		"immutable": "^3.8.1",
 		"prop-types": "^15.5.10",
@@ -40,7 +46,9 @@
 		"eslint": "3.9.1",
 		"eslint-config-rackt": "^1.1.1",
 		"eslint-plugin-react": "^7.1.0",
+		"flow-bin": "0.42.0",
 		"jest": "20.0.4",
+		"pre-commit": "^1.2.2",
 		"react-test-renderer": "16.0.0-alpha.6"
 	},
 	"jest": {

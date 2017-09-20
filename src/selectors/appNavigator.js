@@ -1,17 +1,22 @@
+// @flow
+
 /**
  * AppNavigator selectors
  */
 
- import { createSelector } from 'reselect'
+import { Map } from 'immutable'
+import { createSelector } from 'reselect'
 
- const selectAppNavigator = (state) => state.get('appNavigator')
+type State = Map<string, any>
 
- const makeSelectLoading = () => createSelector(
-   selectAppNavigator,
-   (appNavigator) => appNavigator.get('loading')
- )
+const selectAppNavigator = (state: State) => state.get('appNavigator')
 
- export {
-   selectAppNavigator,
-   makeSelectLoading,
- }
+const makeSelectLoading = () => createSelector(
+  selectAppNavigator,
+  (appNavigator) => appNavigator.get('loading')
+)
+
+export {
+  selectAppNavigator,
+  makeSelectLoading,
+}

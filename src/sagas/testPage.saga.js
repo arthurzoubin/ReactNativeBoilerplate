@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Gets the repositories of the user from Github
  */
@@ -21,7 +23,7 @@ const getReposFunc = username => {
 /**
  * Github repos request/response handler
  */
-export function* getRepos() {
+export function* getRepos(): Generator<any, any, any> {
   // Select username from store
   yield put(toggleLoading(true))
   const username = yield select(makeSelectUsername())
@@ -38,7 +40,7 @@ export function* getRepos() {
 /**
  * Root saga manages watcher lifecycle
  */
-export function* githubData() {
+export function* githubData(): Generator<any, any, any> {
   // Watches for LOAD_REPOS actions and calls getRepos when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution

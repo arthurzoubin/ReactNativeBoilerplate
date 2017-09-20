@@ -1,3 +1,5 @@
+// @flow
+
 import {
   View,
   Text,
@@ -6,11 +8,11 @@ import {
 
 export const FIRST_SCREEN = 'Welcome'
 
-export const headerTitle = headerText => (
+export const headerTitle = (headerText: string) => (
   <Text style={AppNavigatorStyles.headerTitleText}>{headerText}</Text>
 )
 
-export const headerRight = text => {
+export const headerRight = (text: string) => {
   return text !== null ? <View style={AppNavigatorStyles.headerRight}><Text>{text}</Text></View> : null
 }
 

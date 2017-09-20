@@ -1,3 +1,5 @@
+// @flow
+
 /*
  * TestPage Constants
  * Each action has a corresponding type, which the reducer knows and picks up on.
@@ -9,7 +11,7 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const CHANGE_USERNAME = 'ReactNativeBase/TestPage/CHANGE_USERNAME'
-export const LOAD_REPOS = 'ReactNativeBase/TestPage/LOAD_REPOS'
-export const LOAD_REPOS_SUCCESS = 'ReactNativeBase/TestPage/LOAD_REPOS_SUCCESS'
-export const LOAD_REPOS_ERROR = 'ReactNativeBase/TestPage/LOAD_REPOS_ERROR'
+export const CHANGE_USERNAME: string = 'ReactNativeBase/TestPage/CHANGE_USERNAME'
+export const LOAD_REPOS: string = 'ReactNativeBase/TestPage/LOAD_REPOS'
+export const LOAD_REPOS_SUCCESS: string = 'ReactNativeBase/TestPage/LOAD_REPOS_SUCCESS'
+export const LOAD_REPOS_ERROR: string = 'ReactNativeBase/TestPage/LOAD_REPOS_ERROR'

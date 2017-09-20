@@ -1,3 +1,5 @@
+// @flow
+
 /*
  * AppNavigator Constants
  * Each action has a corresponding type, which the reducer knows and picks up on.
@@ -9,5 +11,5 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const GO_TEST = 'ReactNativeBase/AppNavigator/GO_TEST'
-export const LOADING = 'ReactNativeBase/AppNavigator/LOADING'
+export const GO_TEST: string = 'ReactNativeBase/AppNavigator/GO_TEST'
+export const LOADING: string = 'ReactNativeBase/AppNavigator/LOADING'

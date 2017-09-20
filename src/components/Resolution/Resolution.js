@@ -1,3 +1,5 @@
+// @flow
+
 import { Component } from 'react'
 import {
   Dimensions,
@@ -11,39 +13,39 @@ const resolutionProps = {}
 
 export default class Resolution extends Component {
 
-  static get(fixedWidth = true) {
+  static get(fixedWidth: boolean = true): Object {
     return fixedWidth ? { ...resolutionProps.fw } : { ...resolutionProps.fh }
   }
 
-  static setProps(designWidth = 375, designHeight = 667, dim = 'window') {
+  static setProps(designWidth: number = 375, designHeight: number = 667, dim: string = 'window'): void {
     const designSize = {
       width: designWidth,
       height: designHeight,
     }
     const statusBarHeight = 0
-    const pixelRadio = PixelRatio.get()
-    let { width, height } = Dimensions.get(dim)
+    const pixelRadio: number = PixelRatio.get()
+    let { width, height }: Object = Dimensions.get(dim)
     if(dim !== 'screen') {
       height = height - statusBarHeight
     }
-    const widthPixel = PixelRatio.getPixelSizeForLayoutSize(width)
-    const heightPixel = PixelRatio.getPixelSizeForLayoutSize(height)
+    const widthPixel: number = PixelRatio.getPixelSizeForLayoutSize(width)
+    const heightPixel: number = PixelRatio.getPixelSizeForLayoutSize(height)
 
-    const fwDesignScale = designSize.width / widthPixel
-    const fwWidth = designSize.width
-    const fwHeight = heightPixel * fwDesignScale
-    const fwScale = 1 / pixelRadio / fwDesignScale
+    const fwDesignScale: number = designSize.width / widthPixel
+    const fwWidth: number = designSize.width
+    const fwHeight: number = heightPixel * fwDesignScale
+    const fwScale: number = 1 / pixelRadio / fwDesignScale
 
-    const fhDesignScale = designSize.height / heightPixel
-    const fhWidth = widthPixel * fhDesignScale
-    const fhHeight = designSize.height
-    const fhScale = 1/ pixelRadio / fhDesignScale
+    const fhDesignScale: number = designSize.height / heightPixel
+    const fhWidth: number = widthPixel * fhDesignScale
+    const fhHeight: number = designSize.height
+    const fhScale: number = 1/ pixelRadio / fhDesignScale
 
     resolutionProps.fw = { width: fwWidth, height: fwHeight, scale: fwScale, statusBarHeight }
     resolutionProps.fh = { width: fhWidth, height: fhHeight, scale: fhScale, statusBarHeight }
   }
 
-  static FixedWidthView = props => {
+  static FixedWidthView = (props: { children: Object }) => {
     const { width, height, scale, statusBarHeight } = resolutionProps.fw
     return (
       <View
@@ -67,7 +69,7 @@ export default class Resolution extends Component {
     )
   }
 
-  static FixedHeightView = props => {
+  static FixedHeightView = (props: { children: Object }) => {
     const { width, height, scale, statusBarHeight } = resolutionProps.fh
     return (
       <View

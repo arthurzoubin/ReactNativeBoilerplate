@@ -1,3 +1,5 @@
+// @flow
+
 import { combineReducers } from 'redux-immutable'
 
 import { appNavigatorReducers as appNavigator } from './appNavigator.reducers'

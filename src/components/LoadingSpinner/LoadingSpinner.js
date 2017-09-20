@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -6,7 +8,7 @@ import {
 } from 'react-native'
 import Spinner from 'react-native-spinkit'
 
-const LoadingSpinner = ({ type, size, color }) => (
+const LoadingSpinner = ({ type, size, color }: Object) => (
   <View style={styles.container}>
     <View style={styles.coverBg}></View>
     <Spinner type={type} size={size} color={color} />

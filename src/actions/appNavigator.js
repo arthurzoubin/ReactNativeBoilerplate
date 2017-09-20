@@ -1,3 +1,5 @@
+// @flow
+
 /*
  * AppNavigator Actions
  *
@@ -25,7 +27,7 @@ import {
 * @param routeName route name
 * @return {object} An action object with a type of GO_TEST
 */
-export const goTest = routeName => ({
+export const goTest = (routeName: string): Object => ({
   type: GO_TEST,
   payload: {
     routeName,
@@ -37,7 +39,7 @@ export const goTest = routeName => ({
  * @param loading
  * @return {object} An action object with a type of LOADING
  */
-export const toggleLoading = loading => ({
+export const toggleLoading = (loading: boolean): Object => ({
   type: LOADING,
   payload: {
     loading,

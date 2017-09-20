@@ -1,3 +1,5 @@
+// @flow
+
 /*
  * TestPage Reducer
  *
@@ -9,7 +11,7 @@
  * case YOUR_ACTION_CONSTANT:
  *   return state.set('yourStateVariable', true);
  */
-import { fromJS } from 'immutable'
+import { fromJS, Map } from 'immutable'
 
 import {
   CHANGE_USERNAME,
@@ -29,7 +31,9 @@ const initialState = fromJS({
   },
 })
 
-export const testPageReducers = (state = initialState, action) => {
+type State = Map<string, number>
+
+export const testPageReducers = (state: State = initialState, action: Object) => {
   switch (action.type) {
     case CHANGE_USERNAME:
       // Delete prefixed '@' from the github username
