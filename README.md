@@ -19,6 +19,11 @@ react-native run-ios
 react-native run-android
 ```
 
+### Code check (use ESLint to guide the coding type)
+```
+npm run lint
+```
+
 With the default `.env` file, this will start your application in development mode.
 
 ### Technology stack
@@ -39,6 +44,7 @@ React Native Boilerplate uses the following libraries at its core:
 - [ramda](http://ramdajs.com/) - A modular utility library focused on functional programming.
 - [immutable](https://github.com/facebook/immutable-js) - Immutable persistent data collections for Javascript which increase efficiency and simplicity.
 - [flow](https://flow.org/) - Tired of having to run your code to find bugs? Flow identifies problems as you code. Stop wasting your time guessing and checking.
+- [ESLint](https://eslint.org/) - ESLint is an open source project originally created by Nicholas C. Zakas in June 2013. Its goal is to provide a pluggable linting utility for JavaScript.
 
 ##### Modules
 - [react-navigation](https://reactnavigation.org/) - Start quickly with built-in navigators that deliver a seamless out-of-the box experience.
