@@ -13,9 +13,9 @@ git clone https://github.com/arthurzoubin/ReactNativeBoilerplate.git <directory-
 cd <directory-name>
 npm install or yarn install
 mv example.env .env
-#iOS
+# iOS
 react-native run-ios
-#Android
+# Android
 react-native run-android
 ```
 
@@ -46,6 +46,7 @@ React Native Boilerplate uses the following libraries at its core:
 
 ### Catalog
 
+```
 .
 ├── README.md      ## README file
 ├── app.json
@@ -89,6 +90,7 @@ React Native Boilerplate uses the following libraries at its core:
 │       ├── predicates.js
 │       └── requestClient.js      ## a request base class, to create a request to get data from api
 └── yarn.lock
+```
 
 ### Commands
 
