@@ -51,7 +51,8 @@
 		"pre-commit": "^1.2.2",
 		"react-test-renderer": "16.0.0-alpha.6",
 		"reactotron-react-native": "^1.12.3",
-		"reactotron-redux": "^1.12.2"
+		"reactotron-redux": "^1.12.2",
+		"reactotron-redux-saga": "^1.12.2"
 	},
 	"jest": {
 		"preset": "react-native"

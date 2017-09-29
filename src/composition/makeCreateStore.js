@@ -1,19 +1,13 @@
 import { Map } from 'immutable'
 import { compose, createStore as reduxCreatStore, applyMiddleware } from 'redux'
-import Reactotron from 'reactotron-react-native'
-import { reactotronRedux } from 'reactotron-redux'
 import { isEnv } from '../utils'
+import { reactotronCreateStore } from './ReactotronConfig'
 // @flow
 
 let createStore = null
 
 if(isEnv('development')) {
-  Reactotron
-    .configure() // controls connection & communication settings
-    .useReactNative() // add all built-in react native plugins
-    .use(reactotronRedux()) // and redux-logger
-    .connect() // let's connect!
-  createStore = Reactotron.createStore
+  createStore = reactotronCreateStore
 } else {
   createStore = reduxCreatStore
 }
