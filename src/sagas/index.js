@@ -1,15 +1,12 @@
+import { flatten } from 'ramda'
+import { testPageSaga } from './testPage.saga'
 // @flow
 
-import { arrayConcat } from '../utils'
-import { testPageSaga } from './testPage.saga'
+let sagas: Array[] = []
 
-let sagas: Object[] = []
-
-sagas = arrayConcat(
-  [
-    sagas,
-    testPageSaga,
-  ]
-)
+sagas = flatten([
+  sagas,
+  testPageSaga,
+])
 
 export default sagas

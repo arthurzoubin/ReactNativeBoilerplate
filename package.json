@@ -10,9 +10,9 @@
 		"flow:precommit": "flow; test $? -eq 1 -o $? -eq 2 && exit 1 || exit 0"
 	},
 	"precommit.silent": true,
-  "pre-commit": [
-    "flow:precommit"
-  ],
+	"pre-commit": [
+		"flow:precommit"
+	],
 	"dependencies": {
 		"immutable": "^3.8.1",
 		"prop-types": "^15.5.10",
@@ -49,7 +49,9 @@
 		"flow-bin": "0.42.0",
 		"jest": "20.0.4",
 		"pre-commit": "^1.2.2",
-		"react-test-renderer": "16.0.0-alpha.6"
+		"react-test-renderer": "16.0.0-alpha.6",
+		"reactotron-react-native": "^1.12.3",
+		"reactotron-redux": "^1.12.2"
 	},
 	"jest": {
 		"preset": "react-native"

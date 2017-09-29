@@ -40,6 +40,7 @@ React Native Boilerplate uses the following libraries at its core:
 - [immutable](https://github.com/facebook/immutable-js) - Immutable persistent data collections for Javascript which increase efficiency and simplicity.
 - [flow](https://flow.org/) - Tired of having to run your code to find bugs? Flow identifies problems as you code. Stop wasting your time guessing and checking.
 - [ESLint](https://eslint.org/) - ESLint is an open source project originally created by Nicholas C. Zakas in June 2013. Its goal is to provide a pluggable linting utility for JavaScript.
+- [ESLint](https://github.com/infinitered/reactotron/) - A macOS, Windows, and Linux app for inspecting your React JS and React Native apps.
 
 ##### Modules
 - [react-navigation](https://reactnavigation.org/) - Start quickly with built-in navigators that deliver a seamless out-of-the box experience.
@@ -64,6 +65,7 @@ React Native Boilerplate uses the following libraries at its core:
 │   │   └── Resolution
 │   ├── composition
 │   │   ├── makeCreateStore.js      ## create store
+│   │   ├── ReactotronConfig.js    ## integrate Reactotron
 │   │   ├── middleware.js      ## middlewares of redux
 │   │   └── store.js      ## store configure
 │   ├── constants      ## constants folder
@@ -84,7 +86,6 @@ React Native Boilerplate uses the following libraries at its core:
 │   │   ├── appNavigator.js
 │   │   └── testPage.js
 │   └── utils
-│       ├── arrayConcat.js
 │       ├── helpers.js
 │       ├── index.js
 │       ├── predicates.js
